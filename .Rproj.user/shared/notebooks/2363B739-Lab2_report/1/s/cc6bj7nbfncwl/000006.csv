@@ -1,0 +1,3 @@
+"0","#add legend"
+"0","legend(0.8,0.75,legend = c(""naive"",""tree""),col=c(""blue"",""red""),pch=15,"
+"0","       title="" models"", bg=""lightblue"")"

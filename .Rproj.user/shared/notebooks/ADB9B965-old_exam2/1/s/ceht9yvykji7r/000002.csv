@@ -1,0 +1,4 @@
+"0","crabs<-read.csv(""australian-crabs.csv"")"
+"0"," "
+"0","plot(BD~CW,data=crabs,col=species,"
+"0","     main=""CW vs BD colored by Species"")"

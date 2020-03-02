@@ -1,0 +1,4 @@
+"0","library(MASS)"
+"0","lda.fit<-lda(sex~CL+RW,data=crabs)"
+"0","preds.lda<-predict(lda.fit,crabs)"
+"0","plot(crabs$CL,crabs$RW,col=preds.lda$class)"

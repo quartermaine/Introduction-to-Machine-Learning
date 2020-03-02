@@ -1,0 +1,146 @@
+
+
+bankdat<-read.csv2("bank.csv")
+#bankdat$Time<-as.numeric(bankdat$Time)
+
+poisson.fit<-glm(Visitors~Time,data=bankdat,family = poisson(link = "log"))
+#coeficients of model
+coef(poisson.fit)
+
+pr_poisson<-predict(poisson.fit,newdata=bankdat,type="response")
+
+t<-seq(12,13,0.05)
+pr1<-predict(poisson.fit,data.frame(Time=t),type = "response")
+newbankdat<-data.frame(Time=t,Visitors=pr1)
+
+library(boot)
+
+
+rng=function(data, mle) {
+  data1=data.frame(Time=data$Time, Visitors=data$Visitors)
+  n=length(data1$Time)
+  #generate new Price
+  data1$Visitors=exp(rnorm(n,predict(mle, newdata=data1,type="link"),sd(mle$residuals)))
+  return(data1)
+}
+
+
+f1=function(data1){
+  res=glm(Visitors~.,data=data1,family = poisson(link = "log")) #fit poisson model
+  #predict values for all Area values from the original data
+  VisitorsP=predict(res,newdata=newbankdat,type="link")
+  n=length(data1$Time)
+  predictedV=exp(rnorm(n,VisitorsP,
+                   sd(res$residuals)))
+  return(predictedV)
+}
+
+set.seed(12345)
+res=boot(newdata, statistic=f1, R=1000,mle=poisson.fit,
+         ran.gen=rng, sim="parametric")
+ee=envelope(res)
+
+plot(bankdat$Time,bankdat$Visitors, pch=21, bg="orange",xlim = c(9.0,13.0),ylim = c(40,300))
+#plot prediction bands
+points(newbankdat$Time,ee$point[2,], type="l", col="blue")
+points(newbankdat$Time,ee$point[1,], type="l", col="blue")
+
+
+###################################################################################
+
+data0 <- read.csv2("bank.csv")
+
+#y=Poisson(e^(w*x))  see slide 2c block1
+mle <- glm(formula=Visitors~.,family = poisson, data=data0)
+newdata <- data.frame(Time=seq(12,13,0.05),Visitors=seq(12,13,0.05))
+newdata[,2] <- predict(mle, newdata = newdata, type = "response")
+
+library(boot)
+rng=function(data, mle) {
+  data1 <- data
+  n=length(data1$Time)
+  P=predict(mle, newdata=data1, type = "link")
+  data1$Visitors=exp(rnorm(n,P, sd(mle$residuals)))
+  # plot(x=data1$Time,y=data1$Visitors,type = "p")
+  return(data1)
+}
+
+f=function(data1){
+  mle <- glm(formula=Visitors~.,family = poisson, data=data1)
+  P=predict(mle, newdata = newdata, type = "link")
+  n <- length(P)
+  P <- exp(rnorm(n,P,sd=sd(mle$residuals)))
+  # plot(x=data1$Time,y=P,type = "p")
+  return(P)
+}
+
+set.seed(12345)
+b <- boot(newdata, statistic = f, R=1000, mle=mle,
+          ran.gen = rng, sim = "parametric")
+envel <- envelope(b)
+dtt <- as.data.frame(t(envel$point))
+
+plot(x=data0$Time,y=data0$Visitors,type = "b",
+     xlim=c(9,13),ylim = c(40,300) )
+lines(x=newdata$Time,y=dtt$V1)
+lines(x=newdata$Time,y=dtt$V2)
+
+
+
+###########################################################################################
+#confint(poisson.fit)
+
+
+library(neuralnet)
+set.seed(1234567890)
+Var <- runif(50, 0, 10)
+trva <- data.frame(Var, Sin=sin(Var))
+tr <- trva[1:25,] # Training
+va <- trva[26:50,] # Validation
+val_err = double(10)
+# Random initialization of the weights in the interval [-1, 1]
+weights_initial <- runif(41,-1,1)
+for(i in 1:10) {
+  # Fit the model
+  neural_net <- neuralnet(Sin ~ Var, data = tr, hidden =10, 
+                          startweights = weights_initial, threshold = i/1000)
+  # Compute val error
+  prediction = compute(neural_net,va[,1])$net.result
+  error = mean((prediction - va$Sin)^2)
+  val_err[i] = error
+}
+
+plot(val_err, type = 'l', main = "Validation Error vs Threshold", 
+     xlab = "1000*threshold" ,ylab = "Validation error", col="blue")
+# Find best model
+i = which.min(val_err)
+neural_net <- neuralnet(Sin ~ Var, data = tr, hidden =10, 
+                        startweights = weights_initial, threshold = i/1000)
+plot(neural_net)
+# Plot of the predictions and data
+prediction = compute(neural_net,trva[,1])
+prediction = prediction$net.result
+plot(trva$Var,prediction, main = "Prediction vs True", 
+     col = "blue", xlab = "Theta", ylab = "Sin(theta)")
+points(trva, col = "red")
+legend("bottomright",legend = c("Prediction", "True"), 
+       col=c("blue", "red"), pch = c(1,1))
+
+
+###########################################################
+crabs<-read.csv("australian-crabs.csv")
+
+x<-scale(crabs[,names(crabs)%in%c("CW","BD")])
+
+library(kernlab)
+K <- as.kernelMatrix(crossprod(t(x)))
+res.pca=kpca(K)
+
+barplot(res.pca@eig)
+
+plot(res.pca@rotated[,1], res.pca@rotated[,2], xlab="PC1",
+     ylab="PC2")
+
+
+
+

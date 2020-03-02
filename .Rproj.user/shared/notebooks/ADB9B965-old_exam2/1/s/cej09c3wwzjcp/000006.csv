@@ -1,0 +1,6 @@
+"0","library(RColorBrewer)"
+"0","pca_fit<-prcomp(crabs[,names(crabs)%in%c(""CW"",""BD"")],scale=T)"
+"0","pca_var<-pca_fit$sdev^2"
+"0","# calculate percentage of variance of PCAs"
+"0","pca_var_per<-round(pca_var/sum(pca_var)*100,3)"
+"0","barplot(pca_var_per,names.arg=c(""PCA1"",""PCA2""),col=brewer.pal(8, ""Set2""))"

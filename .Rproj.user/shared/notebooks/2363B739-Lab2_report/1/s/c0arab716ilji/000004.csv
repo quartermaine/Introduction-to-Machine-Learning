@@ -1,0 +1,4 @@
+"0","#cumulative plot of percentages of pca's"
+"0","plot(cumsum(pca.var.per), xlab = ""Principal Component"","
+"0","             ylab = ""Proportion of Variance Explained"","
+"0","             type = ""b"")"

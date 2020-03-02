@@ -1,0 +1,10 @@
+"0","#calculate threshold having max loglikelohood"
+"0","thres_max<-cen_cv$threshold[which(cen_cv$loglik==max(cen_cv$loglik))]"
+"0","cat(""=============================================================\n"","
+"0","    ""The theshold having the max value of log-likelihood is :"",thres_max )"
+"1","=============================================================
+"
+"1"," "
+"1","The theshold having the max value of log-likelihood is :"
+"1"," "
+"1","2.5"

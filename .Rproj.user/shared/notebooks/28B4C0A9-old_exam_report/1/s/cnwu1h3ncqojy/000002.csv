@@ -1,0 +1,7 @@
+"0","library(MASS)"
+"0","#lda model "
+"0","lda.fit<-lda(as.factor(class)~frames+duration,data=videos2)"
+"0","#predictions with lda"
+"0","preds_lda<-predict(lda.fit,videos2,type=""class"")"
+"0","#plot with the predicitons"
+"0","plot(videos2$frames,videos2$duration, col=preds_lda$class)"

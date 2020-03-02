@@ -1,0 +1,1 @@
+"0","plot(llik[1:it], type=""o"",main=""log likelihood vs iterations"",xlab=""iterations"")"

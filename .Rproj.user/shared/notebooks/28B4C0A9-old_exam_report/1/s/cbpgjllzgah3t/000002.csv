@@ -1,0 +1,7 @@
+"0","#numeric<-names(dplyr::select_if(train,is.numeric))"
+"0","#train_num<-train[,numeric]"
+"0","#names(dplyr::select_if(train,is.numeric))"
+"0","#select only numeric and integer columns"
+"0","train_num<-train[, sapply(train, class) %in% c(""integer"",""numeric"") ]"
+"0","#discurd the utime column from data"
+"0","train_pca<-train_num[,!names(train_num)%in%c(""utime"")]"

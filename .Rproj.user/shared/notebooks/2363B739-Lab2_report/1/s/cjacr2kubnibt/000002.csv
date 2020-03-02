@@ -1,0 +1,1 @@
+"0","plot(a$S, main = ""ICA components"",xlab=""ICA1"",ylab=""ICA2"",col=""blue"")"

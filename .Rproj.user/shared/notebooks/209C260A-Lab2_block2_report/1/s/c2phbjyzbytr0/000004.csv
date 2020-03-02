@@ -1,0 +1,2 @@
+"0","#plot centroids"
+"0","pamr.plotcen(par.model, list_df, threshold=thres)"

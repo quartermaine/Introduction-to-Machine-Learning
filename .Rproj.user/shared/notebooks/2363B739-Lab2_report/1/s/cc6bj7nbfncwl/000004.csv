@@ -1,0 +1,2 @@
+"0","# ROC plot for naive Bayes "
+"0","lines(dmat$tpr~dmat$fpr,dmat,col=""blue"")"

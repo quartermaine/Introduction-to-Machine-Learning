@@ -1,0 +1,12 @@
+"0","miserror_train1<-mis_error(fit.pred_train1,train$Spam)"
+"0","miserror_test1<-mis_error(fit.pred_test1,test$Spam)"
+"0","cat(""=====================================\nMissclasification error in train: "", miserror_train1,""\nMissclasification error in test:"",miserror_test1)"
+"1","=====================================
+Missclasification error in train: "
+"1"," "
+"1","0.3065693"
+"1"," "
+"1","
+Missclasification error in test:"
+"1"," "
+"1","0.3124088"

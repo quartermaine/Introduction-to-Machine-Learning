@@ -1,0 +1,8 @@
+"0","library(fastICA)"
+"0","set.seed(12345)"
+"0","a <- fastICA(nir[,c(1:126)], 2, alg.typ = ""parallel"", fun = ""logcosh"", alpha = 1,"
+"0","             method = ""R"", row.norm = FALSE, maxit = 200, tol = 0.0001, verbose = F)"
+"0","w<-a$K%*%a$W"
+"0","par(mfrow=c(1,2))"
+"0","#trace plots for ica 2"
+"0","plot(w[,1],main=""ICA1"")"

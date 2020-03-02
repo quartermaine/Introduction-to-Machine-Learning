@@ -1,0 +1,1 @@
+"0","lines(data$Time,predict(gam.fit1,data),col=""red"")"

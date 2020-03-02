@@ -1,0 +1,2 @@
+"0","df_data<-data.frame(low_peanalty=gam.fit_low$edf,high_peanlty=gam.fit_high$edf)"
+"0","df_data"

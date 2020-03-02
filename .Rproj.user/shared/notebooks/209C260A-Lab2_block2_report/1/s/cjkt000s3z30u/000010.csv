@@ -1,0 +1,1 @@
+"0","plot(data$Time,gam.fit$residuals,type=""l"")"

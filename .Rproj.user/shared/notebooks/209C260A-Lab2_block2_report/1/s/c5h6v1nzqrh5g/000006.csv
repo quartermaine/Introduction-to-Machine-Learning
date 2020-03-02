@@ -1,0 +1,6 @@
+"0","#length of coefficients"
+"0","num_elastic<-length(coef(elastic.fit,s=elastic.fit$lambda.1se)@x)"
+"0","cat(""The number of coefficients for elastic is: "",num_elastic)"
+"1","The number of coefficients for elastic is: "
+"1"," "
+"1","12"

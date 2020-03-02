@@ -1,0 +1,4 @@
+"0","cat(""The correlaation between residuals and Influenza is :"",cor(data$Influenza,gam.fit$residuals))"
+"1","The correlaation between residuals and Influenza is :"
+"1"," "
+"1","0.3397395"

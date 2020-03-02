@@ -1,0 +1,3 @@
+"0","lda.fit2<-lda(sex ~ CL+RW, crabs, prior = c(0.1,0.9))"
+"0","preds.lda2 = predict(lda.fit2, data = crabs, type=""class"")"
+"0","plot(crabs$CL,crabs$RW,col=preds.lda2$class)"

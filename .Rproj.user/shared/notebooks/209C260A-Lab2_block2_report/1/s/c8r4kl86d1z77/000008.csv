@@ -1,0 +1,5 @@
+"0","gam.fit1=gam(Mortality~s(Week,k=length(unique(data$Week)))+"
+"0","               s(Year,k=length(unique(data$Year)))+"
+"0","               s(Influenza,k=length(unique(data$Influenza))),data=data)"
+"0","#summary(gam.fit)"
+"0","plot(data$Time,data$Mortality,type=""l"")"

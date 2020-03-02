@@ -1,0 +1,11 @@
+"0","###5##Ridge"
+"0","library(glmnet)"
+"2","Loading required package: foreach
+"
+"2","Loaded glmnet 2.0-16
+
+"
+"0","covariates<-scale(tecator_fat[,-101])"
+"0","responses<-scale(tecator_fat[,101])"
+"0","mod1<-glmnet(as.matrix(covariates),responses,family=""gaussian"",alpha=0)"
+"0","plot(mod1,xvar=""lambda"",label=TRUE)"

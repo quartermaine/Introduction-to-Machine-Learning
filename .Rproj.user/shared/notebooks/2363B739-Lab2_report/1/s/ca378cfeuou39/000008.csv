@@ -1,0 +1,2 @@
+"0","#hostogram of residuals"
+"0","hist(abs(res_tree))      #histogram of residuals  "

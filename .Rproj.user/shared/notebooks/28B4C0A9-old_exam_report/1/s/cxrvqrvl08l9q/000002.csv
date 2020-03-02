@@ -1,0 +1,8 @@
+"0","# missclass=function(X,X1){"
+"0","#   n=length(X)"
+"0","#   return(1-sum(diag(table(X,X1)))/n)"
+"0","# }"
+"0","cat(""The misclassification error for train is:"",mean(videos2$class!=preds_lda$class))"
+"1","The misclassification error for train is:"
+"1"," "
+"1","0.172"

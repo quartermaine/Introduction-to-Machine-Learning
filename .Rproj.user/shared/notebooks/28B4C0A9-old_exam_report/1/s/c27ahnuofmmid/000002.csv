@@ -1,0 +1,8 @@
+"0","#load data"
+"0","videos<-read.csv(""video.csv"",sep="","",header=T)"
+"0","#dvivde data to 50/50"
+"0","n=dim(videos)[1]"
+"0","set.seed(12345)"
+"0","id<-sample(1:n,floor(n*0.5))"
+"0","train<-videos[id,]"
+"0","test<-videos[-id,]"

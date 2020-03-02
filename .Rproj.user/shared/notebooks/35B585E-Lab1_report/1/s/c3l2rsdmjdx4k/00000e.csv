@@ -1,0 +1,5 @@
+"0","###7##CV-LASSO###"
+"0","set.seed(12345)"
+"0","mod3<-cv.glmnet(as.matrix(tecator_fat[,-101]),tecator_fat$Fat,alpha=1,family=""gaussian"",lambda=seq(0,2,0.0001),type.measure = ""mse"")"
+"2","from glmnet Fortran code (error code -19980); Number of nonzero coefficients along the path exceeds pmax=100 at 9980th lambda value; solutions for larger lambdas returned"
+"0","plot(mod3)"

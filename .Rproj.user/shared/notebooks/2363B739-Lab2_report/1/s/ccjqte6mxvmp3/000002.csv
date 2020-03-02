@@ -1,0 +1,2 @@
+"0","crabs<-read.csv(""australian-crabs.csv"")"
+"0","plot(crabs$CL,crabs$RW,col=crabs$sex,pch=21)"

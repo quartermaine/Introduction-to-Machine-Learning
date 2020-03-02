@@ -1,0 +1,28 @@
+"0","summary(btree)"
+"1","
+Regression tree:
+"
+"1","snip.tree(tree = modtree, nodes = 7:6)
+"
+"1","Number of terminal nodes:  3 
+"
+"1","Residual mean deviance:  2698 = 121400 / 45 
+"
+"1","Distribution of residuals:
+"
+"1","   Min. "
+"1","1st Qu. "
+"1"," Median "
+"1","   Mean "
+"1","3rd Qu. "
+"1","   Max. "
+"1","
+"
+"1"," -77.88 "
+"1"," -43.88 "
+"1","  -4.88 "
+"1","   0.00 "
+"1","  30.13 "
+"1"," 115.20 "
+"1","
+"

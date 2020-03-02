@@ -1,0 +1,1 @@
+"0","lines(data$Time,data$Influenza,type=""l"",col=""blue"")"

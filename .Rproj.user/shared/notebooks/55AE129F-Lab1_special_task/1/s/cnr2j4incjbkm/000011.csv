@@ -1,0 +1,5 @@
+"0","DF<-data.frame(c(mis1,mis2),c(0.1722628,0.329927))"
+"0","DF$M<-c(""mis.error train data"","
+"0","                ""mis.error test data"")"
+"0","colnames(DF)<-c(""sp.task1"",""asign.1"",""M"")"
+"0","DF"

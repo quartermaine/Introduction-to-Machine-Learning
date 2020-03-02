@@ -1,0 +1,5 @@
+"0","num_svm<-length(coef(svm)[[1]])"
+"0","cat(""The number of coefficients for svm is: "",num_svm )"
+"1","The number of coefficients for svm is: "
+"1"," "
+"1","43"

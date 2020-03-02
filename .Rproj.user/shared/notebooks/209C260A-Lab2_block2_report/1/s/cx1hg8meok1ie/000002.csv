@@ -1,0 +1,5 @@
+"0","library(mgcv)"
+"0","set.seed(12345)"
+"0","gam.fit=gam(Mortality~s(Week,k=length(unique(data$Week)))+Year, "
+"0","            data=data,method=""GCV.Cp"")"
+"0","#gam.fit"

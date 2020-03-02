@@ -1,0 +1,5 @@
+"0","#predictions using gam model"
+"0","preds<-predict(gam.fit,data)"
+"0","#plot predicitons and fitted Mortality"
+"0","plot(data$Time,data$Mortality,type=""l"",col=""green"","
+"0","     main=""Fitted and Predicted Mortality vs Time"")"

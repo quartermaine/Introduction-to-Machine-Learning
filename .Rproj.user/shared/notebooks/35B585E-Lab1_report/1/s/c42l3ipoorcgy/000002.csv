@@ -1,0 +1,3 @@
+"0","###6##LASSO"
+"0","mod2<-glmnet(as.matrix(covariates),responses,family=""gaussian"",alpha=1)"
+"0","plot(mod2,xvar=""lambda"",label=TRUE)"

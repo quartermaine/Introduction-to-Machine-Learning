@@ -1,0 +1,2 @@
+"0","#original and fitted line                     "
+"0","plot(ord_state$MET,ord_state$EX, pch=19, col=""black"")"

@@ -1,0 +1,13 @@
+"0","cat(""=======================================================================================\n"","
+"0","    ""The deviance for low penalty model is:  "",gam.fit_low$deviance,"
+"0","    ""and fo high penalty model is: "",gam.fit_high$deviance)"
+"1","=======================================================================================
+"
+"1"," "
+"1","The deviance for low penalty model is:  "
+"1"," "
+"1","3646841"
+"1"," "
+"1","and fo high penalty model is: "
+"1"," "
+"1","9804267"

@@ -1,0 +1,2 @@
+"0","#plots of accuracy for train and test"
+"0","plot(steps,(1-rnd_df[,1]),type=""l"",col=""red"",ylim=c(0.94,1),main=""Rnf train/test accuracy rates"",ylab=""accuracy"")"

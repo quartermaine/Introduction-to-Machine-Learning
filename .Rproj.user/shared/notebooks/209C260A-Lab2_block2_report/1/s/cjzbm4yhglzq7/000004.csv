@@ -1,0 +1,6 @@
+"0","cat(""The correlation of fitted and predicted values for Mortality is :\n"","
+"0","    cor(fitted(gam.fit1),data$Mortality))"
+"1","The correlation of fitted and predicted values for Mortality is :
+"
+"1"," "
+"1","0.9244462"

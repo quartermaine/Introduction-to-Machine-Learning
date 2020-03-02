@@ -1,0 +1,80 @@
+set.seed(1234567890)
+Var <- runif(50, 0, 10)
+trva <- data.frame(Var, Sin=sin(Var))
+tr <- trva[1:25,] # Training
+va <- trva[26:50,] # Validation
+plot(trva)
+plot(tr)
+plot(va)
+w_j <- runif(10, -1, 1)
+b_j <- runif(10, -1, 1)
+w_k <- runif(10, -1, 1)
+b_k <- runif(1, -1, 1)
+l_rate <- 1/nrow(tr)^2
+n_ite = 5000
+error <- rep(0, n_ite)
+error_va <- rep(0, n_ite)
+
+
+
+for(i in 1:n_ite) {
+  # error computation: Your code here
+  cat("i: ", i, ", error: ", error[i]/2, ", error_va: ", error_va[i]/2, "\n")
+  flush.console()
+  a_j<-rep(0,length(w_j))
+  z_j<-rep(0,length(w_j))
+  y_k<-rep(0,length(w_k))
+  d_k<-rep(0,length(y_k))
+  d_j<-rep(0,length(y_k))
+  dw_k<-rep(0,length(w_k))
+  dw_j<-rep(0,length(w_j))
+  for(n in 1:nrow(tr)) {
+    # forward propagation: Your code here
+    a_j=+tr[n,1]*w_j+b_j
+    z_j<-tanh(a_j)
+    y_k=+z_j*w_k+b_k
+    d_k=+y_k-tr[n,2]
+    # backward propagation: Your code here
+    d_j=+(1-z_j^2)*sum(w_k*d_k)
+    dw_k=+d_k*z_j
+    dw_j=+d_j*tr[n,1]
+  }
+  error[i]<-mean((y_k-tr[1:10,2])^2)
+  error_va[i]<-mean((y_k-va[1:10,2])^2)
+  w_j<-w_j-l_rate*dw_j
+  w_k<-w_k-l_rate*dw_k
+  
+}
+
+
+w_j
+b_j
+w_k
+b_k
+plot(error/2, ylim=c(0, 5))
+points(error_va/2, col = "red")
+
+
+
+
+sigmoid <- function(x) 1 / (1 + exp(-x))
+
+forward_prob<-function(x,w_1,w_2,b_1,b_2){
+  a_j<-x%*%t(w_1)
+  a_j<-rowSums(sweep(a_j,2,b_1,"+"))
+  z_j<-tanh(a_j)
+  y_k<-rowSums(z_j%*%t(w_2))
+  y_k<-y_k+b_k
+  list("y_k"=y_k,"z_j"=z_j)
+  
+}
+
+back_prob<-function(y,w_2,x){
+  d_k<-y$y_k-tr[,2]
+  d_j<-(1-y$z_j^2)*(w_2%*%t(d_k))
+  dw_k<-d_k%*%t(y$z_j)
+  dw_j<-d_j%*%t(x)
+  list("d_k"=d_k,"d_j"=d_j,"dw_k"=dw_k,"dw_j"=dw_j)
+  
+}
+

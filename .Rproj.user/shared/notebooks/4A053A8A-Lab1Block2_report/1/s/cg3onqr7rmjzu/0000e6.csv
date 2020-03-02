@@ -1,0 +1,1 @@
+"0","plot(steps,(1-ada_df[,1]),type=""l"",col=""red"",main=""Ada Boost train/test accuarcy rates"",ylab = ""accuracy"")"

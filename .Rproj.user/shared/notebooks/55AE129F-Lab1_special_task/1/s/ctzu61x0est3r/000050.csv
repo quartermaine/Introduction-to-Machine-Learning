@@ -1,0 +1,7 @@
+"0","library(ggplot2)"
+"0","myplot<- ggplot(data = DF, aes(x =M,y=DF[,1],group=1))+"
+"0","  geom_line(aes(y=DF[,1],color=""asign.1""))+"
+"0","  geom_line(aes(y=DF[,2],color=""sp.task1""))+"
+"0","  scale_color_manual(labels = c(""sp.task1"", ""asign.1""), values = c(""green"", ""red""))+"
+"0","  labs(x=""models"",y=""errors"")"
+"0","myplot"

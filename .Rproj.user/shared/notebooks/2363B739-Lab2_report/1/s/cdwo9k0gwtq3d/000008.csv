@@ -1,0 +1,3 @@
+"0","logk<-log(cv.res$k)"
+"2","NaNs produced"
+"0","plot(logk, cv.res$dev,type=""b"", col=""red"") "

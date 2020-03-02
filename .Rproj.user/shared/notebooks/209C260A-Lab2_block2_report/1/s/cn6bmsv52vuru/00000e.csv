@@ -1,0 +1,3 @@
+"0","#plots of preds and fitted low penalty"
+"0","plot(data$Time,data$Mortality,type=""l"",col=""green"","
+"0","     main=""Plot of low penalty"")"
